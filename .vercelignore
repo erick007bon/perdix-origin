@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+
+# Skills & agents (not needed for deployment)
+skills
+.agent
+.agents
+.claude
+.cursor
+.gemini
+
+# Documentation & media
+POSTULATION
+VIDEOS
+DEMO_SKILLS.md
+AGENTS.md
+CLAUDE.md
+README.md
+
+# Tests
+tests
+coverage
+__tests__
+
+# Build artifacts
+.next
+.vercel/output
+
+# Misc
+*.md
+!app/**/*.md
+prisma
+lib/prisma.ts

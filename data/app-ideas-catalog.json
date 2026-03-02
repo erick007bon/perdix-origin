@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Binance Crypto Tracker",
+        "tier": "Advanced",
+        "desc": "Real-time cryptocurrency price tracker using Binance API with interactive charts.",
+        "stack": [
+            "Next.js",
+            "Recharts",
+            "Binance SDK",
+            "Tailwind CSS"
+        ],
+        "features": [
+            "Live Data Feed",
+            "Historical Analysis",
+            "User Alerts"
+        ]
+    },
+    {
+        "name": "Enterprise Dashboard",
+        "tier": "Intermediate",
+        "desc": "A comprehensive admin dashboard with user management, analytics, and billing.",
+        "stack": [
+            "React",
+            "Prisma",
+            "PostgreSQL",
+            "Shadcn UI"
+        ],
+        "features": [
+            "Auth System",
+            "Data Visualization",
+            "Stripe Integration"
+        ]
+    },
+    {
+        "name": "Smart Task Manager",
+        "tier": "Beginner",
+        "desc": "Todo app with local storage persistence and priority filtering.",
+        "stack": [
+            "React",
+            "LocalStorage",
+            "CSS Modules"
+        ],
+        "features": [
+            "Drag & Drop",
+            "Due Dates",
+            "Categories"
+        ]
+    }
+]

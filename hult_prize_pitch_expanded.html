@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Perdix Origin | Hult Prize Pitch Deck</title>
+  <style>
+    body {
+        margin: 0;
+        background-color: #050505;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    html {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+    }
+
+    .slide {
+        height: 100vh;
+        width: 100vw;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 4rem;
+        box-sizing: border-box;
+        background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        page-break-after: always;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .slide-content {
+        width: 100%;
+        max-width: 1400px;
+        aspect-ratio: 16/9;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .ambient-glow {
+        position: absolute;
+        filter: blur(140px);
+        opacity: 0.25;
+        z-index: 0;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .glass-panel {
+        background: rgba(20, 20, 25, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        border-radius: 24px;
+        padding: 2.5rem;
+    }
+
+    /* ADN Animation CSS */
+    .dna-container {
+        width: 100px;
+        height: 180px;
+        position: relative;
+        perspective: 1000px;
+        margin: 0 auto;
+    }
+    
+    .dna-strand {
+        position: absolute;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, #fff 0%, #38bdf8 50%, #b34fd4 100%);
+        border-radius: 4px;
+        animation: rotate 3s linear infinite;
+        transform-style: preserve-3d;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    @keyframes rotate {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+    }
+
+    .brand-text {
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to bottom right, #ffffff, #d1d5db, #4b5563);
+    }
+
+    @media print {
+        body { scroll-snap-type: none; background: #050505; -webkit-print-color-adjust: exact; margin: 0;}
+        .slide { height: 100vh; width: 100vw; page-break-after: always; page-break-inside: avoid; border: none; overflow: hidden; }
+        .ambient-glow { opacity: 0.4; } /* Keep glows for print */
+        .dna-strand { animation: none; transform: rotateY(45deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: PORTADA CON ANIMACION ADN -->
+  <section class="slide">
+      <div class="ambient-glow w-[800px] h-[800px] bg-indigo-600 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="slide-content text-center items-center justify-center">
+          <div class="mb-8 flex justify-center items-center h-48">
+              <div class="dna-container">
+                  <div class="dna-strand" style="top:0px; animation-delay:0s"></div>
+                  <div class="dna-strand" style="top:20px; animation-delay:-0.3s"></div>
+                  <div class="dna-strand" style="top:40px; animation-delay:-0.6s"></div>
+                  <div class="dna-strand" style="top:60px; animation-delay:-0.9s"></div>
+                  <div class="dna-strand" style="top:80px; animation-delay:-1.2s"></div>
+                  <div class="dna-strand" style="top:100px; animation-delay:-1.5s"></div>
+                  <div class="dna-strand" style="top:120px; animation-delay:-1.8s"></div>
+                  <div class="dna-strand" style="top:140px; animation-delay:-2.1s"></div>
+                  <div class="dna-strand" style="top:160px; animation-delay:-2.4s"></div>
+              </div>
+          </div>
+          <div class="mb-4 rounded-full bg-white/5 border border-white/10 px-6 py-2 uppercase tracking-[0.3em] text-xs font-bold text-cyan-400">
+              Hult Prize 2026 International Pitch
+          </div>
+          <h1 class="text-7xl lg:text-8xl font-black tracking-tighter brand-text mb-6 leading-tight">
+              Solving the Unseen.<br/>Scaling the Impact.
+          </h1>
+          <h3 class="text-2xl text-gray-400 font-light max-w-4xl leading-relaxed">
+              Pioneering Dual AI Architecture for <strong class="text-white">Global Healthcare</strong> (Alzheimer's) and <strong class="text-white">Food Security</strong> (Banana Plagues) powered by DeepMind & USC LONI.
+          </h3>
+      </div>
+  </section>
+
+  <!-- SLIDE 2: THE PROBLEM -->
+  <section class="slide">
+      <div class="ambient-glow w-[600px] h-[600px] bg-red-900 right-0 top-0"></div>
+      <div class="slide-content justify-center">
+          <h2 class="text-5xl font-bold mb-12 text-white">Two Planetary Crises.<br/><span class="text-red-500">One Root Cause: Late Detection.</span></h2>
+          
+          <div class="grid grid-cols-2 gap-10">
+              <div class="glass-panel">
+                  <div class="flex items-center gap-4 mb-6">
+                      <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 font-bold text-2xl">1</div>
+                      <div>
+                          <h3 class="text-3xl font-bold text-white mb-1">Healthcare</h3>
+                          <p class="text-sm text-red-400 font-bold tracking-wider uppercase">Neurological Collapse</p>
+                      </div>
+                  </div>
+                  <ul class="space-y-4 text-gray-300 text-lg font-light">
+                      <li class="flex items-start border-b border-white/5 pb-4">
+                          <span class="text-red-500 mr-3 font-bold">$1.3T</span> Global economic cost of dementia. Structural brain damage is irreversible by the time symptoms appear.
+                      </li>
+                      <li class="flex items-start">
+                          <span class="text-red-500 mr-3 font-bold">20%</span> Misdiagnosis rate in standard health systems due to fragmented human analysis of MRIs.
+                      </li>
+                  </ul>
+              </div>
+              <div class="glass-panel">
+                  <div class="flex items-center gap-4 mb-6">
+                      <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 font-bold text-2xl">2</div>
+                      <div>
+                          <h3 class="text-3xl font-bold text-white mb-1">Food Security</h3>
+                          <p class="text-sm text-orange-400 font-bold tracking-wider uppercase">Agricultural Collapse</p>
+                      </div>
+                  </div>
+                  <ul class="space-y-4 text-gray-300 text-lg font-light">
+                      <li class="flex items-start border-b border-white/5 pb-4">
+                          <span class="text-orange-500 mr-3 font-bold">400M+</span> People rely on bananas as their staple food. TR4 Fusarium Wilt destroys entire plantations.
+                      </li>
+                      <li class="flex items-start">
+                          <span class="text-orange-500 mr-3 font-bold">100%</span> Crop loss occurs because farmers lack access to laboratory-grade phytopathology tools in the field.
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- SLIDE 3: UNIFYING ARCHITECTURE -->
+  <section class="slide">
+    <div class="ambient-glow w-[800px] h-[800px] bg-purple-900 left-[-200px] top-1/2 transform -translate-y-1/2"></div>
+    <div class="slide-content justify-center items-center text-center">
+        <div class="mb-4 text-purple-400 font-bold tracking-widest text-sm uppercase">The Unified AI Brain</div>
+        <h2 class="text-6xl font-bold mb-8 text-white">Perdix Origin Platform</h2>
+        <p class="text-xl text-gray-400 font-light max-w-3xl mx-auto mb-12">Different problems, identical underlying mathematical challenge: <strong class="text-white">Pattern Recognition at early stages.</strong> Our platform orchestrates two specialized engines.</p>
+        
+        <div class="flex items-center justify-center gap-12 w-full">
+            <div class="glass-panel w-1/3 text-center border-t-4 border-t-cyan-500">
+                <div class="text-4xl mb-4">🧠</div>
+                <h3 class="text-2xl font-bold text-white mb-2">Cloud AI</h3>
+                <p class="text-gray-400 text-sm">Deep Tensor Extraction & Healthcare Multi-modal Fusion</p>
+            </div>
+            
+            <div class="text-purple-500 text-4xl">⟷</div>
+            
+            <div class="glass-panel w-1/3 text-center border-t-4 border-t-green-500">
+                <div class="text-4xl mb-4">📱</div>
+                <h3 class="text-2xl font-bold text-white mb-2">Edge AI</h3>
+                <p class="text-gray-400 text-sm">Agrotech Computer Vision engineered for Mobile Offline Inferencing</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: THE DATA FOUNDATION (USC LONI / IDEAS) -->
+  <section class="slide">
+    <div class="ambient-glow w-[700px] h-[700px] bg-blue-900 right-0 top-0"></div>
+    <div class="slide-content justify-center">
+        <div class="mb-4 text-blue-400 font-bold tracking-widest text-sm uppercase">Global Data Foundation</div>
+        <h2 class="text-5xl font-bold mb-6 text-white flex items-center gap-4">
+            USC LONI & The IDEAS Project
+            <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full border border-blue-500/30">PIONEERING RESEARCH</span>
+        </h2>
+        
+        <div class="grid grid-cols-12 gap-8 items-center mt-8">
+            <div class="col-span-7 glass-panel">
+                <p class="text-lg text-gray-300 font-light leading-relaxed mb-6">
+                    Our AI models aren't trained on synthetic or standard data. We leverage the <b>Image Data Archive (IDA)</b> from the <b>Laboratory of Neuro Imaging (LONI)</b> at the University of Southern California.
+                </p>
+                <div class="space-y-4">
+                    <div class="bg-black/40 border border-white/5 p-4 rounded-xl">
+                        <h4 class="text-white font-bold text-lg mb-1 flex items-center gap-2"><span class="text-blue-500">■</span> The IDEAS Study Validation</h4>
+                        <p class="text-gray-400 text-sm">We base our architecture on findings correlated with the IDEAS (Imaging Dementia—Evidence for Amyloid Scanning) project, enhancing PET scan analytical correlations with NIfTI MRI.</p>
+                    </div>
+                    <div class="bg-black/40 border border-white/5 p-4 rounded-xl">
+                        <h4 class="text-white font-bold text-lg mb-1 flex items-center gap-2"><span class="text-blue-500">■</span> ADNI Standardization</h4>
+                        <p class="text-gray-400 text-sm">Strict adherence to Alzheimer's Disease Neuroimaging Initiative standardizations, parsing thousands of multi-country subjects ensuring zero bias clinical reliability.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-span-5 flex flex-col gap-6">
+                <!-- Visuals for IDA / USC -->
+                <div class="glass-panel p-6 border-blue-500/30 flex justify-center items-center h-48 bg-white/5">
+                    <img src="https://adni.loni.usc.edu/wp-content/themes/adni/images/adni-logo.png" alt="ADNI Logo" class="w-full object-contain filter brightness-200 invert" />
+                </div>
+                <div class="glass-panel p-6 border-white/10 text-center">
+                    <h3 class="text-3xl font-black text-white mb-2">145k+</h3>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Signatures Analized by IDA Globally</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: HEALTHCARE SOLUTION (MedGemma) -->
+  <section class="slide">
+    <div class="ambient-glow w-[800px] h-[800px] bg-cyan-900 left-[-200px] bottom-[-200px]"></div>
+    <div class="slide-content justify-center">
+        <div class="mb-4 text-cyan-400 font-bold tracking-widest text-sm uppercase">Technological Moat 1</div>
+        <h2 class="text-5xl font-bold mb-6 text-white flex items-center gap-4">
+            Healthcare: MedGemma & Late-Fusion
+        </h2>
+        
+        <div class="grid grid-cols-2 gap-8 mt-4">
+            <div class="space-y-6">
+                <div class="glass-panel p-6 relative overflow-hidden group border-cyan-500/30 transition-all">
+                    <div class="text-cyan-400 mb-2 font-bold text-xs uppercase tracking-widest">Google DeepMind Integration</div>
+                    <h4 class="text-white text-xl font-bold mb-2">MedGemma-4B-IT Ecosystem</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">We process dense clinical data and EHR (Electronic Health Records) using Google's pioneering medical LLM, bridging the gap between raw data and digestible medical insights.</p>
+                </div>
+                <div class="glass-panel p-6 relative overflow-hidden group border-purple-500/30 transition-all">
+                    <div class="text-purple-400 mb-2 font-bold text-xs uppercase tracking-widest">Proprietary Architecture</div>
+                    <h4 class="text-white text-xl font-bold mb-2">Late-Fusion Multivariate AI</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our clinical AI organically fuses 128 deep Keras parameters perfectly intertwined with Patient Age, MMSE, and clinical history through an XGBoost logic tree.</p>
+                </div>
+            </div>
+            
+            <div class="glass-panel p-6 flex flex-col items-center justify-center border-white/20 bg-black/60">
+               <p class="text-center text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Actual Orchestrator In-Vivo Results</p>
+               <div class="flex gap-4 w-full h-full">
+                   <img src="/alzheimer-assets/image_7_0.png" alt="ROC Curve" class="w-1/2 rounded border border-white/10 mix-blend-lighten object-cover" />
+                   <img src="/alzheimer-assets/mock_roc.png" alt="Confusion Matrix" class="w-1/2 rounded border border-white/10 mix-blend-lighten object-cover" />
+               </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: AGROTECH SOLUTION -->
+  <section class="slide">
+    <div class="ambient-glow w-[800px] h-[800px] bg-green-900 right-[-200px] top-[-200px]"></div>
+    <div class="slide-content justify-center">
+        <div class="mb-4 text-green-400 font-bold tracking-widest text-sm uppercase">Technological Moat 2</div>
+        <h2 class="text-6xl font-bold mb-12 text-white">Banana Disease Edge AI</h2>
+        
+        <div class="glass-panel p-12 border-l-4 border-l-green-500 relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10 mix-blend-screen w-1/2 h-full">
+               <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+            </div>
+            <div class="grid grid-cols-3 gap-8 mb-10 border-b border-white/10 pb-10 relative z-10">
+                <div class="text-center">
+                    <div class="text-6xl font-black text-green-400 mb-2">99%</div>
+                    <div class="text-gray-400 font-bold uppercase tracking-widest text-xs">Target Accuracy</div>
+                </div>
+                <div class="text-center border-l border-r border-white/10">
+                    <div class="text-6xl font-black text-white mb-2">Edge</div>
+                    <div class="text-gray-400 font-bold uppercase tracking-widest text-xs">Offline Execution</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl font-black text-white mb-2">&lt;1s</div>
+                    <div class="text-gray-400 font-bold uppercase tracking-widest text-xs">Inference Time</div>
+                </div>
+            </div>
+            <div class="text-gray-300 text-2xl font-light leading-relaxed max-w-3xl relative z-10">
+                Built specifically for remote LATAM/African rural regions without internet. We utilize heavily quantized Convolutional Neural Networks on mobile devices to detect microscopic symptomatic patterns on banana leaves, halting TR4 outbreaks instantly.
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: MARKET OPPORTUNITY -->
+  <section class="slide">
+    <div class="ambient-glow w-[600px] h-[600px] bg-yellow-900 left-0 bottom-0"></div>
+    <div class="slide-content justify-center items-center text-center">
+        <div class="mb-4 text-yellow-400 font-bold tracking-widest text-sm uppercase">Global Scale</div>
+        <h2 class="text-6xl font-bold mb-16 text-white">The Market Opportunity</h2>
+        
+        <div class="flex justify-center items-end gap-16 h-64 w-full">
+            <!-- TAM -->
+            <div class="w-1/3 flex flex-col items-center">
+                <div class="w-full bg-white/5 border border-white/10 rounded-t-3xl h-64 flex items-end justify-center pb-8 hover:bg-white/10 transition-colors">
+                    <h3 class="text-5xl font-black text-gray-500">$180B+</h3>
+                </div>
+                <div class="mt-6 text-xl text-white font-bold">TAM</div>
+                <div class="text-gray-400 text-sm">Combined AI Health & Agro Market</div>
+            </div>
+            <!-- SAM -->
+            <div class="w-1/3 flex flex-col items-center">
+                <div class="w-full bg-yellow-500/10 border border-yellow-500/30 rounded-t-3xl h-48 flex items-end justify-center pb-8 hover:bg-yellow-500/20 transition-colors">
+                    <h3 class="text-5xl font-black text-yellow-600">$15B</h3>
+                </div>
+                <div class="mt-6 text-xl text-white font-bold">SAM</div>
+                <div class="text-gray-400 text-sm">LATAM & Developing Nations Tech Needs</div>
+            </div>
+            <!-- SOM -->
+            <div class="w-1/3 flex flex-col items-center">
+                <div class="w-full bg-yellow-400/20 border border-yellow-400/50 rounded-t-3xl h-24 flex items-end justify-center pb-6 shadow-[0_0_30px_rgba(250,204,21,0.2)]">
+                    <h3 class="text-5xl font-black text-yellow-400">$150M</h3>
+                </div>
+                <div class="mt-6 text-xl text-white font-bold">SOM (Year 3)</div>
+                <div class="text-gray-400 text-sm">Penetration in Key Farming & Clinic Hubs</div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: BUSINESS VIABILITY -->
+  <section class="slide">
+    <div class="slide-content justify-center items-center text-center">
+        <div class="mb-4 text-green-400 font-bold tracking-widest text-sm uppercase">Financial Sustainability</div>
+        <h2 class="text-6xl font-bold mb-12 text-white">B2B & B2G Revenue Models</h2>
+        
+        <div class="grid grid-cols-2 gap-10 w-full text-left">
+            <div class="glass-panel relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full"></div>
+                <div class="text-4xl mb-4">🏥</div>
+                <h3 class="text-white text-3xl font-bold mb-4">Healthcare SaaS</h3>
+                <h4 class="text-blue-400 font-bold mb-2">B2B Licensing / Pay-per-Inference</h4>
+                <p class="text-gray-300 text-lg leading-relaxed">Clinics pay a monthly license or API-call fee to access our ADNI-Standard orchestrator, circumventing the need for million-dollar proprietary software setups.</p>
+            </div>
+            <div class="glass-panel relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-bl-full"></div>
+                <div class="text-4xl mb-4">🌾</div>
+                <h3 class="text-white text-3xl font-bold mb-4">Agriculture Tech</h3>
+                <h4 class="text-green-400 font-bold mb-2">B2G & Conglomerate Contracts</h4>
+                <p class="text-gray-300 text-lg leading-relaxed">Targeting Ministries of Agriculture and Multinational Exporters (like Dole/Chiquita). High-value preventative defense contracts to protect national GDPs.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: TRACTION & ROADMAP -->
+  <section class="slide">
+      <div class="ambient-glow w-[1000px] h-[1000px] bg-purple-900 left-1/2 bottom-[-500px] transform -translate-x-1/2"></div>
+      <div class="slide-content justify-center items-center text-center">
+          <div class="mb-4 text-purple-400 font-bold tracking-widest text-sm uppercase">Execution Plan</div>
+          <h2 class="text-6xl font-bold mb-16 text-white">Global Roadmap (2026+)</h2>
+          
+          <div class="grid grid-cols-3 gap-6 w-full text-left">
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-8 relative">
+                  <div class="absolute -top-4 -left-4 w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center font-bold text-white shadow-xl">1</div>
+                  <h3 class="text-xl font-bold text-white mb-2">Phase 1: Validation</h3>
+                  <div class="text-sm text-cyan-400 mb-4 font-mono">Present - Late 2026</div>
+                  <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                      <li>Hult Prize Regional/Global Finals.</li>
+                      <li>Final training loop with USC LONI / ADNI datasets.</li>
+                      <li>Agro-Edge Beta deployed in pilot farms.</li>
+                  </ul>
+              </div>
+              <div class="bg-white/5 border border-white/10 border-t-purple-500 rounded-2xl p-8 relative shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+                  <div class="absolute -top-4 -left-4 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white shadow-xl">2</div>
+                  <h3 class="text-xl font-bold text-white mb-2">Phase 2: Pilot Entry</h3>
+                  <div class="text-sm text-purple-400 mb-4 font-mono">2027</div>
+                  <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                      <li>First B2B medical clinics integrated in LatAm natively.</li>
+                      <li>Government lobbying for TR4 prevention.</li>
+                      <li>Seed Round funding ($1M+ Target).</li>
+                  </ul>
+              </div>
+              <div class="bg-white/5 border border-white/10 border-t-cyan-500 border-r-cyan-500 rounded-2xl p-8 relative">
+                  <div class="absolute -top-4 -left-4 w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center font-bold text-white shadow-xl">3</div>
+                  <h3 class="text-xl font-bold text-white mb-2">Phase 3: Deep Scaling</h3>
+                  <div class="text-sm text-cyan-400 mb-4 font-mono">2028+</div>
+                  <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                      <li>Enterprise partnerships with cloud providers.</li>
+                      <li>Drone-automated inferencing for Agro.</li>
+                      <li>Massive clinical expansions via APIs.</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- SLIDE 10: EQUIPO Y URL -->
+  <section class="slide">
+    <div class="ambient-glow w-[1000px] h-[1000px] bg-cyan-900 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+    <div class="slide-content justify-center items-center text-center">
+        <h2 class="text-7xl font-bold mb-4 text-white hover:text-cyan-300 transition-colors cursor-default">The Engineering Team</h2>
+        <p class="text-xl text-cyan-400 font-light mb-12 tracking-widest uppercase">Perdix Origin Core</p>
+        
+        <div class="flex flex-wrap justify-center gap-16 mb-16">
+            <div class="text-center group">
+                <div class="w-28 h-28 rounded-full border-4 border-cyan-500/30 overflow-hidden mb-4 mx-auto bg-gray-900 flex items-center justify-center group-hover:border-cyan-400 transition-all shadow-[0_0_30px_rgba(8,145,178,0.2)]">
+                    <span class="text-4xl">🇪🇨</span>
+                </div>
+                <h3 class="text-2xl text-white font-bold mb-1">Erick Zambrano</h3>
+                <p class="text-cyan-500 font-medium text-sm lg:text-base">Head of AI Architecture</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-28 h-28 rounded-full border-4 border-purple-500/30 overflow-hidden mb-4 mx-auto bg-gray-900 flex items-center justify-center group-hover:border-purple-400 transition-all shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                    <span class="text-4xl">🇪🇨</span>
+                </div>
+                <h3 class="text-2xl text-white font-bold mb-1">Perdix Team</h3>
+                <p class="text-purple-500 font-medium text-sm lg:text-base">Medical & Agrotech Deep Research</p>
+            </div>
+        </div>
+
+        <div class="glass-panel p-10 max-w-4xl mx-auto border-cyan-500/40 transform hover:scale-[1.02] transition-all">
+            <h3 class="text-xl text-gray-400 font-light mb-6">Interact with the Live Production Engine</h3>
+            
+            <a href="https://ingenieria-platform.vercel.app/" target="_blank" class="inline-block px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-2xl text-3xl font-black text-white shadow-[0_0_60px_rgba(8,145,178,0.6)] hover:shadow-[0_0_100px_rgba(8,145,178,0.9)] transition-all">
+                ingenieria-platform.vercel.app
+            </a>
+            
+            <div class="flex justify-center items-center gap-8 mt-10 opacity-70 scale-90">
+                <img src="https://adni.loni.usc.edu/wp-content/themes/adni/images/adni-logo.png" class="h-10 bg-white p-2 rounded" alt="ADNI" />
+                <div class="text-xl font-bold font-sans">Google <span class="text-blue-400">DeepMind</span></div>
+                <div class="text-xl font-bold font-sans text-red-500">IDEAS<span class="text-white text-xs font-normal align-top ml-1">Study</span></div>
+                <div class="h-8 border-l border-gray-600"></div>
+                <div class="text-xl font-black tracking-widest text-white">▲ Vercel</div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+</body>
+</html>

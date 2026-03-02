@@ -1,0 +1,94 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files — NEVER commit API keys
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# prisma
+/app/generated/prisma
+
+# python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# credentials — CRITICAL
+kaggle.json
+
+# large model files (use Git LFS if needed)
+*.keras
+*.tflite
+*.h5
+*.onnx
+*.pt
+*.pth
+*.pkl
+models/
+alzheimer-ai/models/
+
+# heavy binary and media
+*.mp3
+*.mp4
+*.exe
+VIDEOS/
+tools/
+chrome-extension.zip
+PerdixBrain_Extension.zip
+
+# IDE / System
+.vscode/
+.idea/
+.cursor/
+.claude/
+.agent/
+.agents/
+skills/
+
+# embedded git repos / HuggingFace clones
+hf_clone/
+huggingface_ready/
+
+# banana model subproject git
+03_banana_disease_detection/.git/

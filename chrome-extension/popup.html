@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 300px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background: #111;
+        color: #eee;
+      }
+      h3 { margin-top: 0; color: #06b6d4; }
+      .stat { margin: 10px 0; font-size: 14px; }
+      .bar { height: 4px; background: #333; margin-top: 5px; border-radius: 2px; }
+      .fill { height: 100%; background: #06b6d4; width: 0%; transition: width 0.5s; }
+    </style>
+  </head>
+  <body>
+    <h3>Perdix Brain Active</h3>
+    <div class="stat">
+      Day's Cognitive Load: <span id="tokens">0</span> Tokens
+      <div class="bar"><div class="fill" style="width: 45%"></div></div>
+    </div>
+    <div class="stat">
+      Current Session: <span id="session">Tracking...</span>
+    </div>
+    <p style="font-size: 10px; color: #666; margin-top: 15px;">v1.0.0 - Prototype Build</p>
+    <script src="popup.js"></script>
+  </body>
+</html>

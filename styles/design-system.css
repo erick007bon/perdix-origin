@@ -1,0 +1,34 @@
+:root {
+    /* HSL Color System - Inspired by AntFu & Modern DX */
+    --accent-hue: 250;
+    --accent-sat: 84%;
+    --accent-light: 54%;
+
+    --color-primary: hsl(var(--accent-hue), var(--accent-sat), var(--accent-light));
+    --color-primary-soft: hsl(var(--accent-hue), var(--accent-sat), 95%);
+    --color-primary-dark: hsl(var(--accent-hue), var(--accent-sat), 30%);
+
+    --bg-dark: hsl(220, 20%, 4%);
+    --bg-glass: hsla(220, 20%, 8%, 0.8);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.antfu-glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.antfu-glass:hover {
+    border-color: hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.3);
+    transform: translateY(-2px);
+}
+
+.text-gradient-premium {
+    background: linear-gradient(135deg, #fff 0%, hsla(var(--accent-hue), var(--accent-sat), var(--accent-light), 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

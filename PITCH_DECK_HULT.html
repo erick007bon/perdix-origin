@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdix - Ultimate Pitch Deck (Hult Prize 2026)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --accent: #06b6d4; /* Cyan */
+            --danger: #ef4444; /* Red for Problem */
+            --success: #10b981; /* Green for Solution */
+            --text: #ffffff;
+            --text-muted: #888888;
+        }
+        
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+            position: relative;
+            background: linear-gradient(to bottom right, #0a0a0a, #111);
+            border-bottom: 2px solid #000;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        /* Branding Line */
+        .slide::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        /* Slide Numbering */
+        .slide-number {
+            position: absolute;
+            bottom: 40px; right: 60px;
+            font-size: 4rem; font-weight: 800; color: rgba(255,255,255,0.05);
+        }
+
+        h1 { font-size: 5rem; letter-spacing: -3px; line-height: 1; margin: 0 0 20px 0; font-weight: 800; }
+        h2 { font-size: 3rem; color: var(--accent); margin-bottom: 30px; line-height: 1.1; }
+        h3 { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 4px; font-weight: 600; }
+        
+        p { font-size: 1.3rem; line-height: 1.6; color: #ccc; max-width: 950px; margin-bottom: 1.5rem; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; }
+        
+        .box {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border: 1px solid #333;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .box strong { display: block; font-size: 1.6rem; color: white; margin-bottom: 15px; }
+        .box li { font-size: 1.1rem; margin-bottom: 10px; color: #bbb; }
+
+        .stat { font-size: 5rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 10px; }
+        
+        /* Problem Styling */
+        .problem-stat { color: var(--danger); }
+        
+        /* Future Project Styling */
+        .vision-tag { 
+            display: inline-block; padding: 5px 15px; 
+            border: 1px solid var(--accent); color: var(--accent); 
+            border-radius: 20px; font-size: 0.9rem; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .print-btn {
+            position: fixed; top: 30px; right: 30px; z-index: 9999;
+            background: var(--accent); color: #000; padding: 15px 40px;
+            border: none; font-weight: bold; font-size: 1.2rem; cursor: pointer;
+            border-radius: 8px; box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* PRINT SETTINGS */
+        @media print {
+            @page { size: landscape; margin: 0; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #0a0a0a !important; color: #fff !important; }
+            .print-btn { display: none; }
+            .slide { height: 100vh; width: 100vw; border: none; page-break-after: always; break-after: page; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">🖨️ CLICK TO SAVE PDF (COMPLETE VERSION)</button>
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide" style="align-items: center; text-align: center;">
+        <span class="slide-number">01</span>
+        <h3>Hult Prize 2026 Submission</h3>
+        <h1 style="font-size: 9rem;">PERDIX</h1>
+        <h2 style="font-size: 2.5rem; color: #fff; font-weight: 300; margin-top: -10px;">The Operating System for Human Potential</h2>
+        <div style="margin-top: 60px;">
+            <p style="font-size: 1.2rem; color: var(--accent);">presented by</p>
+            <strong style="font-size: 1.8rem;">Erick Flores Zambrano</strong><br>
+            <span style="color: #666; font-size: 1.1rem;">Engineering Lead & Founder</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <div class="slide">
+        <span class="slide-number">02</span>
+        <h3>01 / The Crisis</h3>
+        <h2 style="color: var(--danger);">The "Fake Expert" Pandemic</h2>
+        <p>We are in the middle of an AI revolution, but trust is collapsing. Resumes are filled with unverifiable claims like "Prompt Engineer" or "AI Architect". Companies are hiring blind, relying on outdated credentials (degrees) that cannot measure modern skills.</p>
+        
+        <div class="grid">
+            <div class="box" style="border-left-color: var(--danger);">
+                <div class="stat problem-stat">85%</div>
+                <strong>Hiring Failure Rate</strong>
+                <p style="margin:0;">Of HR Managers admit they cannot verify generative AI skills effectively.</p>
+            </div>
+            <div class="box" style="border-left-color: var(--danger);">
+                <div class="stat problem-stat">$4T</div>
+                <strong>Economic Impact</strong>
+                <p style="margin:0;">Projected annual loss due to talent mismatches in the Deep Tech sector by 2028.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: THE SOLUTION ECOSYSTEM -->
+    <div class="slide">
+        <span class="slide-number">03</span>
+        <h3>02 / The Solution</h3>
+        <h2>The Dual-Engine Ecosystem</h2>
+        <p>Perdix is not a certification platform. It is a verification engine. We replace trust with mathematical proof.</p>
+        
+        <div class="grid">
+            <div class="box">
+                <span class="vision-tag">LIVE NOW</span>
+                <strong>⚡ Perdix Talent</strong>
+                <p>Web Platform for API-based verification. Connects to OpenAI, GitHub, and HuggingFace to audit code and prompts instantly.</p>
+            </div>
+            <div class="box">
+                <span class="vision-tag">PROTOTYPE READY</span>
+                <strong>🧠 Perdix Brain</strong>
+                <p>Browser Extension & OS Layer. Silently measures cognitive output across ChatGPT, Claude, VS Code, and Slack.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: PRODUCT DEEP DIVE - TALENT -->
+    <div class="slide">
+        <span class="slide-number">04</span>
+        <h3>Product 01</h3>
+        <h2>Perdix Talent: Implementation</h2>
+        <p>Our flagship module solves the immediate hiring gap. It acts as a "Lie Detector" for AI skills.</p>
+        
+        <div class="grid">
+            <div class="box">
+                <strong>How it Works:</strong>
+                <ul>
+                    <li><strong>API Handshake:</strong> Users connect their OpenAI Developer Key.</li>
+                    <li><strong>Audit Engine:</strong> We scan model usage logs (GPT-4o vs gpt-3.5-turbo).</li>
+                    <li><strong>Complexity Analysis:</strong> Algorithms measure token density and prompt logical structure.</li>
+                </ul>
+            </div>
+            <div class="box">
+                <strong>Current Status:</strong>
+                <ul>
+                    <li style="color: var(--success); font-weight: bold;">DEPLOYED & LIVE</li>
+                    <li>Processing Real API Connections.</li>
+                    <li>Generating "Elite" Verification Badges.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: PRODUCT DEEP DIVE - BRAIN -->
+    <div class="slide">
+        <span class="slide-number">05</span>
+        <h3>Product 02</h3>
+        <h2>Perdix Brain: The "Fitbit for Intellect"</h2>
+        <p>This is where we change the world. A privacy-first browser extension that turns every keystroke into a productivity metric.</p>
+        
+        <div class="grid">
+            <div class="box">
+                <strong>The "Cognitive Output Score" (COS)</strong>
+                <p>A proprietary metric derived from:</p>
+                <ul>
+                    <li>Input Prompt Complexity (IPC).</li>
+                    <li>Output Token Velocity (OTV).</li>
+                    <li>Tool Diversity Index (TDI).</li>
+                </ul>
+            </div>
+            <div class="box">
+                <strong>Use Case:</strong>
+                <p>Imagine applying for a job not with a CV, but with a "Verified Data Stream" proving you have spent 500 hours coding in Python with AI assistance in the last month.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: FUTURE VISION - SKILL DNA -->
+    <div class="slide">
+        <span class="slide-number">06</span>
+        <h3>03 / The Future (2026)</h3>
+        <h2>Project: "Skill DNA" Protocol</h2>
+        <p>What if your skills were immutable? We are designing a blockchain-based standard where verified work creates a permanent record.</p>
+        
+        <div class="grid">
+            <div class="box" style="border-left-color: #a855f7;"> <!-- Purple for Future -->
+                <span class="vision-tag" style="border-color: #a855f7; color: #a855f7;">IN DEVELOPMENT</span>
+                <strong>The Death of the CV</strong>
+                <p>No more PDFs. Employers will query the blockchain for "Candidate with Python DNA > 90% Match".</p>
+            </div>
+            <div class="box" style="border-left-color: #a855f7;">
+                <strong>Universal API</strong>
+                <p>Integration with LinkedIn, Upwork, and Fiverr to display the "Perdix Verified Badge" globally.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: FUTURE VISION - NEURAL RECRUITMENT -->
+    <div class="slide">
+        <span class="slide-number">07</span>
+        <h3>04 / The Dream (2027+)</h3>
+        <h2>Project: Neural Recruitment</h2>
+        <p>The ultimate goal: A marketplace where AI Agents hire humans automatically.</p>
+        
+        <div style="background: rgba(255,255,255,0.03); padding: 40px; border: 1px solid #333; margin-top: 30px;">
+            <strong>Scenario:</strong>
+            <p>"Company A requires a Data Scientist to clean a dataset. Their AI Agent queries the Perdix Network, finds a candidate with matching metrics (COS Score), negotiates the rate via Smart Contract, and the work begins instantly."</p>
+            <p style="color: var(--accent); margin-top: 20px; font-weight: bold;">Zero Friction. Zero Bias. Pure Meritocracy.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: BUSINESS MODEL -->
+    <div class="slide">
+        <span class="slide-number">08</span>
+        <h3>05 / Business Model</h3>
+        <h2>Scalable & Sustainable</h2>
+        
+        <div class="grid">
+            <div class="box">
+                <strong>B2C (Talent)</strong>
+                <ul>
+                    <li><strong>Freemium:</strong> Basic verification.</li>
+                    <li><strong>Pro ($15/mo):</strong> Detailed analytics & "Elite Badge".</li>
+                </ul>
+            </div>
+            <div class="box">
+                <strong>B2B (Enterprise)</strong>
+                <ul>
+                    <li><strong>Recruiter Seat ($200/mo):</strong> Access to the verified pool.</li>
+                    <li><strong>API Access:</strong> Pay-per-verification call.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: SOCIAL IMPACT -->
+    <div class="slide">
+        <span class="slide-number">09</span>
+        <h3>06 / Social Impact</h3>
+        <h2>Decent Work (UN SDG #8)</h2>
+        <p>Traditional education is expensive and exclusive. AI is free and inclusive.</p>
+        
+        <div class="grid">
+            <div class="box" style="border-left-color: var(--success);">
+                <strong>Democratizing Opportunity</strong>
+                <p>A self-taught coder in Ecuador can prove they are better than a Stanford graduate simply by showing their verified Output Score.</p>
+            </div>
+            <div class="box" style="border-left-color: var(--success);">
+                <strong>Eliminating Bias</strong>
+                <p>Algorithms don't care about gender, race, or location. They only care about code quality and prompt logic.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: TRACTION & STATUS -->
+    <div class="slide">
+        <span class="slide-number">10</span>
+        <h3>07 / Status Report</h3>
+        <h2>Ready for Launch</h2>
+        
+        <div class="grid">
+            <div class="box">
+                <div class="stat">90%</div>
+                <strong>Technical Completion</strong>
+                <p>Core verification engine is deployed on Vercel. Extension prototype is functional locally.</p>
+            </div>
+            <div class="box">
+                <div class="stat">~100</div>
+                <strong>Beta Waitlist</strong>
+                <p>Early tech adopters ready to verify their accounts.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: TEAM -->
+    <div class="slide">
+        <span class="slide-number">11</span>
+        <h3>The Team</h3>
+        <h2>Visionary Engineering</h2>
+        <p>Led by deep tech specialists committed to solving the global skills gap.</p>
+        <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 30px;">
+            <strong style="font-size: 2rem; color: #fff;">Erick Flores Zambrano</strong>
+            <p style="color: var(--accent); font-size: 1.2rem; margin-top: 5px;">Founder & AI Architect</p>
+            <p style="font-size: 1rem; color: #888; max-width: 600px;">Engineering student (Data Science & AI). Focused on Generative AI, LLM Integration, and Ethical Algorithms.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: CLOSE -->
+    <div class="slide" style="align-items: center; text-align: center;">
+        <span class="slide-number">12</span>
+        <h2 style="font-size: 5rem; margin-bottom: 30px; line-height: 1.1;">Stop Guessing.<br><span style="color: #fff;">Start Verifying.</span></h2>
+        <p style="font-size: 1.5rem; color: #888;">The future is verified.</p>
+        <p style="font-size: 1.8rem; color: var(--accent); margin-top: 40px; font-weight: bold;">ingenieria-platform.vercel.app</p>
+    </div>
+
+</body>
+</html>

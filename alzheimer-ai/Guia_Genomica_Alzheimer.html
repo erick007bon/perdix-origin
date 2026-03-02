@@ -1,0 +1,817 @@
+<html><head><meta charset=utf-8><style>body{font-family:Segoe UI,Arial;max-width:900px;margin:40px auto;padding:20px;line-height:1.7;color:#1a1a2e}h1{color:#0f3460;border-bottom:3px solid #0f3460;padding-bottom:10px}h2{color:#16213e;margin-top:40px}h3{color:#533483}table{border-collapse:collapse;width:100%;margin:15px 0}th,td{border:1px solid #ddd;padding:10px 14px;text-align:left}th{background:#0f3460;color:white}tr:nth-child(even){background:#f8f9fa}code{background:#f0f0f0;padding:2px 6px;border-radius:4px}pre{background:#1a1a2e;color:#a5d6a7;padding:16px;border-radius:8px;overflow-x:auto}pre code{background:none;color:inherit}blockquote{border-left:4px solid #533483;padding:10px 20px;margin:20px 0;background:#f3e5f5;border-radius:4px}hr{border:none;border-top:2px solid #e0e0e0;margin:30px 0}</style></head><body><h1>🧬 Guía Fundamental: Genómica + Ciencia de Datos + Alzheimer</h1>
+
+<blockquote>
+  <p><em>"Tu abuela te dio una misión. La ciencia te dará las herramientas."</em></p>
+</blockquote>
+
+<hr />
+
+<h2>📖 Parte 1: El ADN — Lo Básico que debes dominar</h2>
+
+<h3>¿Qué es el ADN?</h3>
+
+<p>El ADN es una <strong>molécula</strong> que contiene las instrucciones para construir y operar un ser humano. Imagínalo así:</p>
+
+<pre><code>ADN = El código fuente del ser humano
+Genes = Las funciones del código
+Proteínas = Lo que ejecutan esas funciones
+Células = Los "servidores" donde corre el código
+</code></pre>
+
+<h3>Las 4 letras del código de la vida</h3>
+
+<p>El ADN usa solo <strong>4 letras</strong> (nucleótidos):</p>
+
+<table>
+<thead>
+<tr>
+  <th>Letra</th>
+  <th>Nombre</th>
+  <th>Se une con</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>A</strong></td>
+  <td>Adenina</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td><strong>T</strong></td>
+  <td>Timina</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td><strong>C</strong></td>
+  <td>Citosina</td>
+  <td>G</td>
+</tr>
+<tr>
+  <td><strong>G</strong></td>
+  <td>Guanina</td>
+  <td>C</td>
+</tr>
+</tbody>
+</table>
+
+<p>Tu genoma completo tiene <strong>~3,200 millones</strong> de estas letras. Si las imprimieras en libros, llenarías <strong>262,000 páginas</strong>.</p>
+
+<h3>Estructura jerárquica</h3>
+
+<pre><code>Nucleótido (A, T, C, G)
+  └── Codón (3 letras = 1 aminoácido) → "ATG" = Metionina
+       └── Gen (~20,000 letras promedio) → Instrucción para 1 proteína
+            └── Cromosoma (23 pares) → "Capítulos" del genoma
+                 └── Genoma completo (3.2 mil millones de letras)
+</code></pre>
+
+<h3>Los 23 pares de cromosomas</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Cromosomas</th>
+  <th>Contenido relevante para Alzheimer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Chr 1</strong></td>
+  <td>Gen CR1 (sistema inmune)</td>
+</tr>
+<tr>
+  <td><strong>Chr 2</strong></td>
+  <td>Gen BIN1 (sinapsis)</td>
+</tr>
+<tr>
+  <td><strong>Chr 6</strong></td>
+  <td>Gen TREM2 (microglía)</td>
+</tr>
+<tr>
+  <td><strong>Chr 8</strong></td>
+  <td>Gen CLU (limpieza amiloide)</td>
+</tr>
+<tr>
+  <td><strong>Chr 11</strong></td>
+  <td>Gen PICALM (tráfico vesicular)</td>
+</tr>
+<tr>
+  <td><strong>Chr 14</strong></td>
+  <td>Gen PSEN1 (Alzheimer familiar temprano)</td>
+</tr>
+<tr>
+  <td><strong>Chr 19</strong></td>
+  <td>Gen <strong>APOE</strong> (EL gen más importante en Alzheimer)</td>
+</tr>
+<tr>
+  <td><strong>Chr 21</strong></td>
+  <td>Gen APP (proteína precursora amiloide)</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>📖 Parte 2: ¿Qué es un Genoma de Referencia?</h2>
+
+<h3>El problema</h3>
+
+<p>Cada persona tiene <strong>un genoma ligeramente diferente</strong> (~4-5 millones de variantes). Para poder comparar, necesitas un <strong>mapa estándar</strong>.</p>
+
+<h3>La solución: Genoma de Referencia</h3>
+
+<p>El <strong>genoma de referencia humano</strong> es como el <strong>Google Maps</strong> del ADN. Es una secuencia "modelo" contra la cual comparas el ADN de cualquier persona.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Versión</th>
+  <th>Nombre</th>
+  <th>Año</th>
+  <th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>GRCh36</td>
+  <td>hg18</td>
+  <td>2006</td>
+  <td>Anticuado</td>
+</tr>
+<tr>
+  <td>GRCh37</td>
+  <td><strong>hg19</strong></td>
+  <td>2009</td>
+  <td>Aún usado en muchos estudios</td>
+</tr>
+<tr>
+  <td>GRCh38</td>
+  <td><strong>hg38</strong></td>
+  <td>2013</td>
+  <td><strong>El estándar actual</strong> ← lo que usa AlphaGenome</td>
+</tr>
+<tr>
+  <td>T2T-CHM13</td>
+  <td>T2T</td>
+  <td>2022</td>
+  <td>El primero completo al 100%</td>
+</tr>
+</tbody>
+</table>
+
+<h3>¿Cómo funciona?</h3>
+
+<pre><code>Genoma de referencia (hg38):  ...ATCGATCGATCG...
+Tu ADN:                       ...ATCGATCGATCG...  → Igual = Normal
+ADN de tu abuela:             ...ATCGATTGATCG...  → C→T = VARIANTE
+                                       ^
+                                   Esta letra cambió
+</code></pre>
+
+<p>Cuando encontramos una letra diferente, la llamamos <strong>variante</strong> o <strong>SNP</strong> (Single Nucleotide Polymorphism).</p>
+
+<blockquote>
+  <p><strong>AlphaGenome</strong> toma esa variante y predice: <em>"¿Qué efecto tiene este cambio de letra en el funcionamiento del cuerpo?"</em></p>
+</blockquote>
+
+<hr />
+
+<h2>📖 Parte 3: Codificante vs No Codificante — El 98.5% misterioso</h2>
+
+<h3>La gran sorpresa de la genómica</h3>
+
+<p>Cuando secuenciaron el genoma humano completo, descubrieron algo impactante:</p>
+
+<pre><code>┌──────────────────────────────────────────────┐
+│              GENOMA HUMANO                    │
+│                                               │
+│  ██ 1.5% — Genes codificantes                │
+│     (Producen proteínas directamente)         │
+│                                               │
+│  ████████████████████████████████ 98.5%       │
+│     Regiones NO codificantes                  │
+│     (Antes llamado "ADN basura")              │
+│     ¡PERO NO ES BASURA!                       │
+└──────────────────────────────────────────────┘
+</code></pre>
+
+<h3>¿Qué hay en ese 98.5%?</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Elemento</th>
+  <th>Qué hace</th>
+  <th>Analogía</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Promotores</strong></td>
+  <td>Dicen "activa este gen"</td>
+  <td>El botón de encendido</td>
+</tr>
+<tr>
+  <td><strong>Enhancers</strong></td>
+  <td>Amplifican la expresión de un gen</td>
+  <td>El control de volumen</td>
+</tr>
+<tr>
+  <td><strong>Silencers</strong></td>
+  <td>Apagan un gen</td>
+  <td>El botón de mute</td>
+</tr>
+<tr>
+  <td><strong>Intrones</strong></td>
+  <td>Se eliminan del ARN mensajero</td>
+  <td>Escenas eliminadas de una película</td>
+</tr>
+<tr>
+  <td><strong>UTRs</strong> (5' y 3')</td>
+  <td>Regulan estabilidad del ARN</td>
+  <td>El empaque de un producto</td>
+</tr>
+<tr>
+  <td><strong>Insulators</strong></td>
+  <td>Aíslan genes entre sí</td>
+  <td>Paredes entre apartamentos</td>
+</tr>
+<tr>
+  <td><strong>Transposones</strong></td>
+  <td>Elementos que "saltan" por el genoma</td>
+  <td>Texto que se copia y pega solo</td>
+</tr>
+<tr>
+  <td><strong>lncRNAs</strong></td>
+  <td>ARN largo no codificante que regula genes</td>
+  <td>Directores de orquesta</td>
+</tr>
+<tr>
+  <td><strong>Sitios de splicing</strong></td>
+  <td>Donde se "corta" el ARN</td>
+  <td>Marcas de edición en un manuscrito</td>
+</tr>
+</tbody>
+</table>
+
+<h3>¿Por qué esto importa TANTO para Alzheimer?</h3>
+
+<blockquote>
+  <p><strong>Dato crucial</strong>: Más del 90% de las variantes de riesgo de Alzheimer descubiertas por GWAS están en regiones <strong>NO codificantes</strong>.</p>
+</blockquote>
+
+<p>Esto significa que el Alzheimer <strong>NO</strong> se causa principalmente por proteínas rotas, sino por <strong>regulación alterada</strong> — genes que se encienden demasiado, se apagan cuando no deben, o producen cantidades incorrectas de proteínas.</p>
+
+<p><strong>Ejemplo concreto con APOE:</strong></p>
+
+<pre><code>Región NO codificante cerca de APOE:
+  └── Enhancer que controla CUÁNTO APOE se produce en el cerebro
+       └── Variante rs429358 ALTERA este enhancer
+            └── Se produce más APOE4 → Más amiloide → Alzheimer
+</code></pre>
+
+<hr />
+
+<h2>📖 Parte 4: GWAS — Cómo se descubren genes de enfermedades</h2>
+
+<h3>¿Qué es GWAS?</h3>
+
+<p><strong>Genome-Wide Association Study</strong> = Estudiar TODO el genoma de miles de personas para encontrar variantes asociadas a una enfermedad.</p>
+
+<h3>¿Cómo funciona?</h3>
+
+<pre><code>Paso 1: Tomar ADN de 50,000 personas CON Alzheimer
+Paso 2: Tomar ADN de 50,000 personas SIN Alzheimer  
+Paso 3: Comparar 10+ millones de variantes genéticas
+Paso 4: Encontrar variantes más frecuentes en enfermos
+
+Resultado → "Manhattan Plot" (gráfico de volcán)
+            Los picos más altos = variantes MÁS asociadas
+</code></pre>
+
+<h3>El problema que resuelve AlphaGenome</h3>
+
+<p>GWAS te dice <strong>DÓNDE</strong> hay una asociación, pero <strong>NO</strong> te dice:
+- ¿Cuál variante exacta causa el efecto?
+- ¿A qué gen afecta?
+- ¿Cómo altera la biología?</p>
+
+<p><strong>AlphaGenome</strong> responde TODAS esas preguntas prediciendo el efecto funcional de cada variante.</p>
+
+<hr />
+
+<h2>📖 Parte 5: Epigenética — El "software" sobre el ADN</h2>
+
+<h3>ADN = Hardware, Epigenética = Software</h3>
+
+<p>El ADN no cambia (es el mismo en todas tus células), pero la <strong>epigenética</strong> controla qué genes se activan en cada tejido.</p>
+
+<h3>Mecanismos epigenéticos clave</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Mecanismo</th>
+  <th>Qué hace</th>
+  <th>En Alzheimer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Metilación del ADN</strong></td>
+  <td>Añade grupo CH₃ a la C → silensia gen</td>
+  <td>Genes protectores se apagan</td>
+</tr>
+<tr>
+  <td><strong>Modificación de histonas</strong></td>
+  <td>Marcas en las proteínas que empaquetan ADN</td>
+  <td>H3K27ac = gen activo. H3K27me3 = gen apagado</td>
+</tr>
+<tr>
+  <td><strong>Accesibilidad cromatina</strong></td>
+  <td>Si el ADN está "abierto" o "cerrado"</td>
+  <td>Regiones de riesgo más abiertas en neuronas</td>
+</tr>
+<tr>
+  <td><strong>Estructura 3D</strong></td>
+  <td>Cómo se pliega el cromosoma</td>
+  <td>Enhancers lejanos tocan promotores por plegamiento</td>
+</tr>
+</tbody>
+</table>
+
+<h3>¿Qué predice AlphaGenome de esto?</h3>
+
+<p>AlphaGenome predice <strong>TODAS estas capas</strong> simultáneamente:
+1. ¿La cromatina está abierta o cerrada? → ATAC-seq / DNase-seq
+2. ¿Qué marcas de histonas hay? → ChIP-seq (H3K27ac, H3K4me1, etc.)
+3. ¿Se expresa el gen? → RNA-seq
+4. ¿Cómo se pliega el cromosoma? → Hi-C contact maps
+5. ¿Cómo se procesa el ARN? → Splice sites + junctions</p>
+
+<hr />
+
+<h2>📖 Parte 6: Ciencia de Datos en Genómica — Tu camino al doctorado</h2>
+
+<h3>¿Qué hace un científico de datos en genómica?</h3>
+
+<pre><code>Datos genómicos ──→ Algoritmos de ML/DL ──→ Descubrimientos biológicos
+(terabytes)          (redes neuronales)       (medicina personalizada)
+</code></pre>
+
+<h3>Las herramientas que debes dominar</h3>
+
+<h4>Nivel 1: Fundamentos (1-2 años)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Herramienta</th>
+  <th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Python</strong></td>
+  <td>Lenguaje principal de bioinformática</td>
+</tr>
+<tr>
+  <td><strong>R + Bioconductor</strong></td>
+  <td>Análisis estadístico genómico</td>
+</tr>
+<tr>
+  <td><strong>Linux/Bash</strong></td>
+  <td>Todos los pipelines genómicos corren en Linux</td>
+</tr>
+<tr>
+  <td><strong>SQL</strong></td>
+  <td>Bases de datos genómicas</td>
+</tr>
+<tr>
+  <td><strong>Git</strong></td>
+  <td>Control de versiones</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Nivel 2: Bioinformática (2-3 años)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Herramienta</th>
+  <th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Biopython</strong></td>
+  <td>Manipulación de secuencias</td>
+</tr>
+<tr>
+  <td><strong>Pysam/Samtools</strong></td>
+  <td>Leer archivos BAM/SAM (alineamientos)</td>
+</tr>
+<tr>
+  <td><strong>Bedtools</strong></td>
+  <td>Operaciones con regiones genómicas</td>
+</tr>
+<tr>
+  <td><strong>PLINK</strong></td>
+  <td>Análisis de GWAS</td>
+</tr>
+<tr>
+  <td><strong>VCF tools</strong></td>
+  <td>Manipulación de variantes</td>
+</tr>
+<tr>
+  <td><strong>GATK</strong></td>
+  <td>Llamado de variantes (variant calling)</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Nivel 3: Deep Learning Genómico (3-4 años)</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Herramienta</th>
+  <th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>PyTorch / TensorFlow</strong></td>
+  <td>Construir modelos de DL</td>
+</tr>
+<tr>
+  <td><strong>Enformer / Borzoi</strong></td>
+  <td>Modelos de secuencia-a-función</td>
+</tr>
+<tr>
+  <td><strong>AlphaGenome API</strong></td>
+  <td>Predicción de efectos de variantes</td>
+</tr>
+<tr>
+  <td><strong>AlphaFold</strong></td>
+  <td>Predicción de estructura de proteínas</td>
+</tr>
+<tr>
+  <td><strong>scRNA-seq tools</strong></td>
+  <td>Análisis de célula única</td>
+</tr>
+<tr>
+  <td><strong>GNNs</strong></td>
+  <td>Grafos de interacción génica</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Formatos de archivos que debes conocer</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Formato</th>
+  <th>Qué contiene</th>
+  <th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>FASTA</strong></td>
+  <td>Secuencias de ADN/proteínas</td>
+  <td>El genoma de referencia</td>
+</tr>
+<tr>
+  <td><strong>FASTQ</strong></td>
+  <td>Lecturas crudas del secuenciador</td>
+  <td>Datos del paciente</td>
+</tr>
+<tr>
+  <td><strong>BAM/SAM</strong></td>
+  <td>Lecturas alineadas al genoma</td>
+  <td>Dónde mapea cada lectura</td>
+</tr>
+<tr>
+  <td><strong>VCF</strong></td>
+  <td>Variantes genéticas</td>
+  <td>Las mutaciones del paciente</td>
+</tr>
+<tr>
+  <td><strong>BED</strong></td>
+  <td>Regiones genómicas</td>
+  <td>"Promotores de todos los genes"</td>
+</tr>
+<tr>
+  <td><strong>BigWig</strong></td>
+  <td>Señales genómicas (cobertura)</td>
+  <td>Datos de RNA-seq, ATAC-seq</td>
+</tr>
+<tr>
+  <td><strong>GTF/GFF</strong></td>
+  <td>Anotaciones de genes</td>
+  <td>Dónde empieza y termina cada gen</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>📖 Parte 7: ¿Qué predice exactamente nuestro demo?</h2>
+
+<h3>El flujo completo de <code>AlphaGenome_Alzheimer_Demo.py</code></h3>
+
+<pre><code>ENTRADA:
+  Una variante genética, por ejemplo:
+  - Cromosoma 19, posición 44,908,684
+  - Letra normal: T
+  - Letra mutada: C
+  - Gen: APOE (ε4)
+
+         │
+         ▼
+
+ALPHAGENOME PROCESA:
+  1. Lee 1,000,000 de letras alrededor de la variante
+  2. Pasa por U-Net + Transformer (deep learning)
+  3. Genera 5,930 predicciones simultáneas
+
+         │
+         ▼
+
+SALIDA (lo que podemos analizar):
+
+  📊 RNA-seq:
+  "Con la variante T (normal), el gen APOE produce 
+   100 unidades de ARN mensajero.
+   Con la variante C (mutada), produce 180 unidades."
+  → El gen APOE se SOBREEXPRESA → Más proteína APOE4 → Más amiloide
+
+  🔓 ATAC-seq:
+  "La cromatina alrededor de la variante se ABRE más 
+   con la mutación."
+  → El ADN se vuelve más accesible → Más factores de transcripción
+     se pegan → Más expresión del gen
+
+  🏷️ Marcas de histonas:
+  "H3K27ac AUMENTA (= más activación)
+   H3K27me3 DISMINUYE (= menos represión)"
+  → Confirmación epigenética de sobreexpresión
+
+  🧬 Splicing:
+  "Un nuevo sitio de splicing se crea, produciendo 
+   una variante de ARN mensajero diferente."
+  → Proteína con función alterada
+</code></pre>
+
+<h3>¿Por qué esto es revolucionario?</h3>
+
+<p><strong>Antes de AlphaGenome (método tradicional):</strong></p>
+
+<pre><code>1. Encontrar variante de riesgo en GWAS          → 2 años, $2M
+2. Crear línea celular con la variante (CRISPR)  → 6 meses, $500K
+3. Medir expresión génica experimentalmente       → 3 meses, $100K
+4. Medir cromatina experimentalmente              → 3 meses, $100K
+5. Publicar paper con resultados                   → 6 meses
+
+Total: ~3-4 años y ~$3 millones de dólares
+</code></pre>
+
+<p><strong>Con AlphaGenome:</strong></p>
+
+<pre><code>1. Ingresar la variante al API                    → 5 segundos
+2. Obtener predicciones multimodales              → 30 segundos  
+3. Visualizar y analizar resultados               → 1 hora
+4. Generar hipótesis para validación              → 1 día
+
+Total: ~1 día y GRATIS (uso académico)
+</code></pre>
+
+<hr />
+
+<h2>📖 Parte 8: El Alzheimer a nivel molecular</h2>
+
+<h3>La cascada del Alzheimer</h3>
+
+<pre><code>1. GENÉTICA: Variantes de riesgo (APOE4, TREM2, etc.)
+      │
+      ▼
+2. PROTEÍNAS MAL PLEGADAS:
+   - Beta-amiloide (Aβ) se acumula FUERA de las neuronas → Placas
+   - Proteína Tau se hiperfosforila DENTRO → Ovillos neurofibrilares
+      │
+      ▼
+3. NEUROINFLAMACIÓN:
+   - Microglía (las "defensas" del cerebro) se activan
+   - TREM2 regula esta respuesta
+   - Si TREM2 está mutado → Microglía no limpia bien
+      │
+      ▼
+4. MUERTE NEURONAL:
+   - Sinapsis se destruyen
+   - Neuronas del hipocampo mueren primero (memoria)
+   - Luego corteza cerebral (lenguaje, razonamiento)
+      │
+      ▼
+5. SÍNTOMAS CLÍNICOS:
+   - Pérdida de memoria (lo que vemos en tu abuela)
+   - Desorientación, cambios de personalidad
+   - Pérdida de independencia
+</code></pre>
+
+<h3>¿Dónde interviene cada gen?</h3>
+
+<pre><code>APOE  ────→ Transporte de lípidos + limpieza de Aβ
+TREM2 ────→ Activación de microglía
+BIN1  ────→ Endocitosis en sinapsis + procesamiento de Tau
+CLU   ────→ Chaperona que previene agregación de Aβ
+CR1   ────→ Sistema del complemento (inmunidad innata)
+PICALM ───→ Tráfico vesicular + limpieza de Aβ por la BHE
+APP   ────→ Proteína que se corta para formar Aβ
+PSEN1 ────→ Enzima que corta APP (γ-secretasa)
+</code></pre>
+
+<hr />
+
+<h2>📖 Parte 9: Tu Ruta al Doctorado</h2>
+
+<h3>Ruta académica recomendada</h3>
+
+<pre><code>AÑO 1-2: Pregrado en Ingeniería de Datos/Computación (ya estás aquí ✅)
+  ├── Python, estadística, machine learning
+  ├── Proyectos: AlzheimerAI, BananaAI (portfolio)
+  └── Publicaciones: Hult Prize, GitHub, LinkedIn
+
+AÑO 3-4: Maestría en Bioinformática o Genómica Computacional
+  ├── Universidades top: Stanford, MIT, Cambridge, Max Planck
+  ├── Temas: Análisis de genomas, GWAS, single-cell
+  └── Becas: Fulbright, Chevening, DAAD, Erasmus Mundus
+
+AÑO 5-8: Doctorado en Genómica Computacional
+  ├── Laboratorios ideales: Kundaje Lab (Stanford), 
+  │   Kellis Lab (MIT), Stegle Lab (EMBL)
+  ├── Tema de tesis: "Deep Learning para variantes 
+  │   no codificantes en enfermedades neurodegenerativas"
+  └── Publicar en Nature, Science, Cell
+</code></pre>
+
+<h3>Programas de doctorado específicos</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Universidad</th>
+  <th>Programa</th>
+  <th>País</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Stanford</strong></td>
+  <td>Biomedical Data Science PhD</td>
+  <td>🇺🇸</td>
+</tr>
+<tr>
+  <td><strong>MIT</strong></td>
+  <td>Computational &amp; Systems Biology</td>
+  <td>🇺🇸</td>
+</tr>
+<tr>
+  <td><strong>Cambridge</strong></td>
+  <td>MRC PhD in Genomic Medicine</td>
+  <td>🇬🇧</td>
+</tr>
+<tr>
+  <td><strong>EMBL-EBI</strong></td>
+  <td>PhD in Computational Biology</td>
+  <td>🇩🇪/🇬🇧</td>
+</tr>
+<tr>
+  <td><strong>ETH Zürich</strong></td>
+  <td>Computational Biology &amp; Bioinformatics</td>
+  <td>🇨🇭</td>
+</tr>
+<tr>
+  <td><strong>Max Planck</strong></td>
+  <td>Genome Biology PhD</td>
+  <td>🇩🇪</td>
+</tr>
+<tr>
+  <td><strong>Broad Institute</strong></td>
+  <td>Genomics &amp; Computational Biology</td>
+  <td>🇺🇸</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Lo que el Hult Prize + tu proyecto te da</h3>
+
+<ul>
+<li>✅ <strong>Demostración de impacto social</strong> (SDG 3, abuela con Alzheimer)</li>
+<li>✅ <strong>Competencia técnica</strong> (Deep Learning, genómica, APIs avanzadas)</li>
+<li>✅ <strong>Portfolio publicable</strong> (GitHub, papers, LinkedIn)</li>
+<li>✅ <strong>Narrativa personal poderosa</strong> para becas</li>
+<li>✅ <strong>Red de contactos</strong> académicos y profesionales</li>
+</ul>
+
+<hr />
+
+<h2>📖 Parte 10: Glosario esencial</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Término</th>
+  <th>Definición simple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>SNP</strong></td>
+  <td>Cambio de una sola letra en el ADN</td>
+</tr>
+<tr>
+  <td><strong>GWAS</strong></td>
+  <td>Estudio que compara genomas de enfermos vs sanos</td>
+</tr>
+<tr>
+  <td><strong>Alelo</strong></td>
+  <td>Versión de un gen (ej: APOE ε2, ε3, o ε4)</td>
+</tr>
+<tr>
+  <td><strong>Fenotipo</strong></td>
+  <td>Lo que observamos (síntomas, características)</td>
+</tr>
+<tr>
+  <td><strong>Genotipo</strong></td>
+  <td>Las letras exactas del ADN</td>
+</tr>
+<tr>
+  <td><strong>Transcripción</strong></td>
+  <td>Copiar ADN → ARN mensajero</td>
+</tr>
+<tr>
+  <td><strong>Traducción</strong></td>
+  <td>Convertir ARN → Proteína</td>
+</tr>
+<tr>
+  <td><strong>Splicing</strong></td>
+  <td>"Editar" el ARN quitando intrones</td>
+</tr>
+<tr>
+  <td><strong>Enhancer</strong></td>
+  <td>Región que amplifica expresión de un gen</td>
+</tr>
+<tr>
+  <td><strong>Promotor</strong></td>
+  <td>Región donde empieza la transcripción</td>
+</tr>
+<tr>
+  <td><strong>Cromatina</strong></td>
+  <td>ADN + proteínas histonas empaquetados</td>
+</tr>
+<tr>
+  <td><strong>Epigenoma</strong></td>
+  <td>El conjunto de modificaciones químicas sobre el ADN</td>
+</tr>
+<tr>
+  <td><strong>Microglía</strong></td>
+  <td>Células inmunes del cerebro</td>
+</tr>
+<tr>
+  <td><strong>Beta-amiloide</strong></td>
+  <td>Proteína tóxica que forma placas en Alzheimer</td>
+</tr>
+<tr>
+  <td><strong>Tau</strong></td>
+  <td>Proteína que forma ovillos dentro de neuronas</td>
+</tr>
+<tr>
+  <td><strong>WGS</strong></td>
+  <td>Whole Genome Sequencing — secuenciar TODO el ADN</td>
+</tr>
+<tr>
+  <td><strong>Variant calling</strong></td>
+  <td>Proceso de encontrar variantes en un genoma</td>
+</tr>
+<tr>
+  <td><strong>Fine-mapping</strong></td>
+  <td>Identificar la variante causal exacta</td>
+</tr>
+<tr>
+  <td><strong>PRS</strong></td>
+  <td>Polygenic Risk Score — score de riesgo combinado</td>
+</tr>
+<tr>
+  <td><strong>eQTL</strong></td>
+  <td>Variante que afecta cuánto se expresa un gen</td>
+</tr>
+<tr>
+  <td><strong>BHE</strong></td>
+  <td>Barrera hematoencefálica — protege el cerebro</td>
+</tr>
+</tbody>
+</table>
+</body></html>
