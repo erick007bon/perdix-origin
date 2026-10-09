@@ -250,7 +250,7 @@ export default function GenomicsPage() {
                           <Shield className="h-5 w-5 text-purple-400" />
                           <h4 className="text-white font-bold">Etapa 2: Predicción Funcional</h4>
                         </div>
-                        <p className="text-sm text-gray-500">El modelo predice 5,313 targets epigenómicos (ChIP-seq, ATAC-seq, DNase-seq) con AUC > 0.90.</p>
+                        <p className="text-sm text-gray-500">El modelo predice 5,313 targets epigenómicos (ChIP-seq, ATAC-seq, DNase-seq) con AUC &gt; 0.90.</p>
                       </div>
                     </div>
 

@@ -404,12 +404,24 @@ ${recoTerapeutica}
               <BrainCircuit className="h-10 w-10 text-purple-500" />
               Terminal de Diagnóstico
             </h1>
-            <p className="text-gray-400 mt-2">Clasificación de MRI cerebral con modelos de IA entrenados en datos reales.</p>
+            <p className="text-gray-400 mt-2">
+              Motor multimodal respaldado por el estudio DOMITILA (<span className="text-white font-medium">5,078 pacientes, OASIS-3 + ADNI, C = 0.741</span>).
+            </p>
           </div>
           
-          <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
-            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-bold text-gray-300 uppercase tracking-widest">Perdix Digital Twin Engine</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <a 
+              href="/alzheimer-assets/DOMITILA_Scientific_Paper_JPAD.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-cyan-400 bg-cyan-950/40 border border-cyan-500/40 px-3 py-2 rounded-xl hover:bg-cyan-900/60 transition-all flex items-center gap-1.5"
+            >
+              <FileText className="h-3.5 w-3.5" /> Paper Científico (PDF)
+            </a>
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
+              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-bold text-gray-300 uppercase tracking-widest">DOMITILA Engine v4.2</span>
+            </div>
           </div>
         </div>
 

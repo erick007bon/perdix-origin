@@ -40,6 +40,14 @@ interface ServiceCardProps {
 // Tailwind v4 cannot purge bg-${color}-500/20 at runtime — must use explicit strings.
 const PROJECTS: Project[] = [
   {
+    title: "Alzheimer AI (DOMITILA)",
+    status: "Biotech",
+    desc: "Plataforma de pronóstico multimodal validada en 5,078 pacientes (OASIS-3 + ADNI, C=0.741).",
+    link: "/alzheimer-ai",
+    gradientClass: "from-purple-500/20",
+    icon: <BrainCircuit className="h-8 w-8 text-purple-400" />,
+  },
+  {
     title: "Google Automate",
     status: "Activo",
     desc: "Ecosistema de automatización nativo con Google Cloud y Workplace.",
@@ -52,8 +60,8 @@ const PROJECTS: Project[] = [
     status: "Nuevo",
     desc: "Agentes inteligentes personalizados con GPT-4 y RAG corporativo.",
     link: "/servicios-ia",
-    gradientClass: "from-purple-500/20",
-    icon: <Bot className="h-8 w-8 text-purple-400" />,
+    gradientClass: "from-pink-500/20",
+    icon: <Bot className="h-8 w-8 text-pink-400" />,
   },
   {
     title: "SRI Intelligence",
@@ -203,6 +211,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.4 }}
           className="mt-4 max-w-3xl text-xl text-gray-400 md:text-2xl font-medium tracking-tight mx-auto leading-relaxed"
         >
+          {userInterest === "Biomédica" && "Pronóstico multimodal y democratización del Alzheimer validado en 5,078 pacientes."}
           {userInterest === "Tributaria" && "Analizamos el SRI con precisión algorítmica para optimizar cada centavo de tu empresa."}
           {userInterest === "Agrícola" && "El banano y el camarón tienen un nuevo aliado: Deep Learning para detección de enfermedades."}
           {userInterest === "Seguridad" && "Predicciones geoespaciales para un mundo más seguro. El futuro nos pertenece."}
@@ -278,6 +287,7 @@ export default function Home() {
                   onMouseEnter={() => {
                     if (index === 2) startDwellTimer(nextSlide);
                     if (index === 0) startDwellTimer(prevSlide);
+                    if (project.title.includes("Alzheimer")) setUserInterest("Biomédica");
                     if (project.title.includes("SRI")) setUserInterest("Tributaria");
                     if (project.title.includes("Agro")) setUserInterest("Agrícola");
                     if (project.title.includes("Safety")) setUserInterest("Seguridad");
